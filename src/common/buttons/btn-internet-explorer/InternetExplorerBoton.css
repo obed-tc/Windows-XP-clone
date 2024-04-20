@@ -1,0 +1,10 @@
+.btn-internet-explorer{
+    padding: 0;
+    background: none;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 14px;
+}
