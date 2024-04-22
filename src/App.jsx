@@ -4,13 +4,26 @@ import Content from "./components/Content/Content";
 import TaskBar from "./components/TaskBar/TaskBar";
 import { useEffect } from "react";
 import LoadingPage from "./pages/LoadingPage/LoadingPage";
+import WelcomePage from "./pages/welcomePage/WelcomePage";
 function App() {
   const power = localStorage.getItem("power");
   const [start, setStart] = useState(power ? true : false);
+  const [welcome, setWelcome] = useState(false);
+
+  const playSound = () => {
+    const audio = new Audio("/src/assets/start-sound.mp3");
+    audio.play();
+  };
+
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setStart(true);
-      localStorage.setItem("power", "true");
+      setWelcome(true);
+
+      setTimeout(() => {
+        setStart(true);
+        playSound();
+        localStorage.setItem("power", "true");
+      }, 5000);
     }, 10000);
     return () => clearTimeout(timeout);
   }, []);
@@ -28,6 +41,8 @@ function App() {
           <Content />
           <TaskBar />
         </div>
+      ) : welcome ? (
+        <WelcomePage />
       ) : (
         <LoadingPage />
       )}
