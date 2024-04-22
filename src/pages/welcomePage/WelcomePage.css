@@ -1,0 +1,17 @@
+.page-welcome{
+    background-color: #5b7fdc;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.bar-top{
+    background-color: #2932a7;
+    height: 80px;
+    border-bottom: 3px solid #8a6b63;
+}
+.bar-bottom{
+    background-color: #2932a7;
+    height: 80px;
+    border-top: 3px solid #8a6b63;
+}
