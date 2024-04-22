@@ -11,7 +11,7 @@ function App() {
   const [welcome, setWelcome] = useState(false);
 
   const playSound = () => {
-    const audio = new Audio("/src/assets/start-sound.mp3");
+    const audio = new Audio("./assets/start-sound.mp3");
     audio.play();
   };
 
